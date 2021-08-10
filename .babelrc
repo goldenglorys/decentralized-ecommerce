@@ -1,0 +1,15 @@
+{
+  "presets": ["env", "react"],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-class-properties",
+    "syntax-object-rest-spread",
+    "transform-es3-member-expression-literals",
+    "transform-es3-property-literals",
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": "css"
+    }]
+  ]
+}

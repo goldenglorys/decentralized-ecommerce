@@ -1,0 +1,46 @@
+body {
+  background: #f0f2f5;
+}
+
+.logo {
+  height: 63px;
+  float: left;
+}
+
+.search {
+  float: left;
+  width: calc(100% - 80px);
+  height: 36px;
+  margin: 14px 0 14px 16px;
+
+  :global {
+    .ant-input {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 0;
+    }
+
+    .ant-input,
+    .ant-input-search-icon {
+      color: #fefefe;
+    }
+  }
+}
+
+.mainNav {
+  margin: 20px 0 15px 0;
+}
+
+.content {
+  padding: 0 50px;
+}
+
+.main {
+  background: #ffffff;
+  padding: 24px;
+  min-height: 480px;
+}
+
+.footer {
+  text-align: center;
+}

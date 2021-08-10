@@ -1,0 +1,11 @@
+:global {
+  .ant-row + .ant-row {
+    margin-top: 16px;
+  }
+}
+
+.emptyView {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 1.2rem;
+  text-align: center;
+}

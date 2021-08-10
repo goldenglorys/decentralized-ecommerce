@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" transform="translate(0.000000, -11.000000)">
+            <rect id="Rectangle" fill="#34515E" x="0" y="11" width="64" height="64"></rect>
+            <text id="N" font-family="Phosphate-Inline, Phosphate" font-size="64" font-weight="normal" fill="#FFFFFF">
+                <tspan x="12.084" y="60">E</tspan>
+            </text>
+            <text id="STORE" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="8" font-weight="normal" fill="#FFFFFF">
+                <tspan x="21.132" y="71">STORE</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
