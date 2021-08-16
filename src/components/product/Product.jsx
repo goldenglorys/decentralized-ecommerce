@@ -18,8 +18,7 @@ const STATUS = {
 
 const Product = ({ product, placeOrder }) => (
   <Card
-    style={{minHeight: '193px'}}
-    cover={<img alt={product.name} src={product.imageLink} />}
+    cover={<img style={{minHeight: '193px'}} alt={product.name} src={product.imageLink} />}
     actions={[
       <span>{STATUS[product.status.toNumber()]}</span>,
       <span>{fromWei(product.price, 'finney').toString()} finney</span>,

@@ -10,18 +10,19 @@ export const initWeb3 = () =>
         window.web3 = new Web3(window.ethereum);
         try {
             window.ethereum.enable();// Request account access if needed
-            console.log('Connected to metamask');
+            console.log('Connected to metamask', web3.eth.defaultAccount);
           } catch (error) {
-           console.log('Please give access to perform transactions.');// User denied account access...
+           console.log('Please give access to perform transactions.', error);// User denied account access...
         }
         web3 = window.web3;
         console.log(web3);
+        console.log('Connected to metamask', web3.eth.defaultAccount);
         resolve(web3);
       } else if (window.web3) {
         web3 = window.web3;
         console.log(web3);
         resolve(web3);
-        console.log('Connected to metamask');
+        console.log('Connected to metamask', web3.eth.accounts);
       }
       else {
         console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');

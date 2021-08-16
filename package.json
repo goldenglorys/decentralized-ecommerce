@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "@fleekhq/fleek-storage-js": "^1.0.17",
     "antd": "^3.3.2",
     "classnames": "^2.2.5",
     "ipfs-api": "^18.2.0",
@@ -19,6 +20,7 @@
     "web3": "^0.20.5"
   },
   "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.4.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.4",
@@ -55,6 +57,6 @@
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --open --config webpack.dev.js"
   },
-  "author": "Nha Hoang",
+  "author": "Glory Olusola",
   "license": "MIT"
 }
