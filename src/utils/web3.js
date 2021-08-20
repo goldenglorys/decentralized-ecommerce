@@ -9,49 +9,41 @@ export const initWeb3 = () =>
       if (window.ethereum) {
         window.web3 = new Web3(window.ethereum);
         try {
-            window.ethereum.enable();// Request account access if needed
-            console.log('Connected to metamask', web3.eth.defaultAccount);
+            window.ethereum.enable(); // Request account access if needed
+            web3 = window.web3;
+            web3.eth.defaultAccount = web3.eth.accounts[0];
+            console.log(web3);
+            if (web3.version.network == "3") {
+              console.log("Connected to ropsten test network", web3.eth.defaultAccount);
+              resolve(web3);
+            } else {
+              alert("The metamask ethereum browser is not connected to ropsten test network, connect to ropsten to interact with the smart contracts. Connect and reload the page");
+              resolve(web3);
+            }
           } catch (error) {
+            alert('Please give metamask permission to this site');
            console.log('Please give access to perform transactions.', error);// User denied account access...
+        }
+      } else if (window.web3) {
+        web3 = window.web3;
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        console.log(web3);
+        if (web3.version.network == "3") {
+          console.log("Connected to ropsten test network", web3.eth.defaultAccount);
+          resolve(web3);
+        } else {
+          alert("The metamask ethereum browser is not connected to ropsten test network, connect to ropsten to interact with the smart contracts. Connect and reload the page");
+          resolve(web3);
+        }
+      }
+      else {
+        if (window.confirm('Non-Ethereum browser detected. You should consider trying MetaMask and reload the page. Click ok to continue to install')) {
+          window.open("https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn/", "_blank");
         }
         web3 = window.web3;
         console.log(web3);
-        console.log('Connected to metamask', web3.eth.defaultAccount);
-        resolve(web3);
-      } else if (window.web3) {
-        web3 = window.web3;
-        console.log(web3);
-        resolve(web3);
-        console.log('Connected to metamask', web3.eth.accounts);
-      }
-      else {
-        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
-        web3 = window.web3;
-        console.log(web3);
         resolve(web3);
       }
-      // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-      // if (typeof window.web3 !== 'undefined') {
-      //   // Use Mist/MetaMask's provider.
-      //   web3 = new Web3(window.web3.currentProvider);
-
-      //   console.log('Injected web3 detected.'); // eslint-disable-line
-
-      //   resolve(web3);
-      // } else {
-      //   // Fallback to localhost if no web3 injection. We've configured this to
-      //   // use the development console's port by default.
-      //   const provider = new Web3.providers.HttpProvider('http://127.0.0.1:7545');
-      //   web3 = new Web3(provider);
-
-      //   console.log('No web3 instance injected, using Local web3.'); // eslint-disable-line
-
-      //   resolve(web3);
-      // }
-      // web3.eth.defaultAccount = '0x7A4614CE012527cDB2e391eB1F9De79883F32814'
-      // // web3.eth.defaultAccount = web3.eth.accounts[0];
-      // // web3.personal.unlockAccount(web3.eth.defaultAccount)
-      // // web3.personal.unlockAccount(web3.eth.defaultAccount)
     });
   });
 
