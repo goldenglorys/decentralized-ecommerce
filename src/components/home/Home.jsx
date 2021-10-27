@@ -26,13 +26,18 @@ class Home extends Component {
   render() {
     const { products } = this.props;
     const NO_OF_ITEMS = 4;
+    
+    let availableProducts = [];
+    availableProducts = this.props.products.filter((product) => {
+      return product.status.toNumber() != 3;
+    });
 
     return (
       <div className={styles.home}>
-        {Array(Math.ceil(products.length / NO_OF_ITEMS))
+        {Array(Math.ceil(availableProducts.length / NO_OF_ITEMS))
           .fill()
           .map((_, i) =>
-            products.slice(i * NO_OF_ITEMS, (i * NO_OF_ITEMS) + NO_OF_ITEMS))
+            availableProducts.slice(i * NO_OF_ITEMS, (i * NO_OF_ITEMS) + NO_OF_ITEMS))
           .map(row => (
             <Row key={uuid()} gutter={16} style={{marginTop: '16px'}}>
               {row.map(product => (
@@ -42,7 +47,7 @@ class Home extends Component {
               ))}
             </Row>
           ))}
-        {!products.length && (
+        {!availableProducts.length && (
           <div 
             style={{
               color: 'rgba(0, 0, 0, 0.45)',

@@ -16,22 +16,23 @@ const STATUS = {
   3: 'Sold',
 };
 
-const Product = ({ product, placeOrder }) => (
-  <Card
-    cover={<img style={{minHeight: '193px'}} alt={product.name} src={product.imageLink} />}
-    actions={[
-      <span>{STATUS[product.status.toNumber()]}</span>,
-      <span>{fromWei(product.price, 'finney').toString()} finney</span>,
-      <IconText
-        type="shopping-cart"
-        text="Buy"
-        onClick={() => placeOrder(product)}
-      />,
-    ]}
-  >
-    <Meta title={product.name} description={product.descLink} />
-  </Card>
-);
+const Product = ({ product, placeOrder }) => {
+  return (
+    <Card
+      cover={<img style={{minHeight: '193px'}} alt={product.name} src={product.imageLink} />}
+      actions={[
+        <span>{STATUS[product.status.toNumber()]}</span>,
+        <span>{fromWei(product.price, 'finney').toString()} finney</span>,
+        <IconText
+          type="shopping-cart"
+          text="Buy"
+          onClick={() => placeOrder(product)}
+        />,
+      ]}
+    >
+      <Meta title={product.name} description={product.descLink} />
+    </Card>
+  )};
 
 Product.propTypes = {
   product: PropTypes.object.isRequired,

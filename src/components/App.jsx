@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Layout, Menu, Input } from 'antd';
 import Home from './home';
 import YourOrders from './your-orders';
+import YourOrdersBuyer from './your-orders-buyer';
+import YourOrdersSeller from './your-orders-seller';
 import AddProduct from './add-product';
 import About from './about';
 import MenuLink from './menu-link';
@@ -48,7 +50,9 @@ const App = () => (
           selectable={false}
         >
           <MenuLink to="/" activeOnlyWhenExact label="Home" />
-          <MenuLink to="/your-orders" label="Your Orders" />
+          {/* <MenuLink to="/your-orders" label="Your Orders" /> */}
+          {/* <MenuLink to="/buyer-orders" label="Buyer Orders" /> */}
+          {/* <MenuLink to="/seller-orders" label="Seller Orders" /> */}
           <MenuLink to="/add-product" label="Add Product" />
           <MenuLink to="/about" label="About" />
         </Menu>
@@ -62,6 +66,8 @@ const App = () => (
         >
           <Route exact path="/" component={Home} />
           <Route path="/your-orders" component={YourOrders} />
+          <Route path="/customer" component={YourOrdersBuyer} />
+          <Route path="/admin" component={YourOrdersSeller} />
           <Route path="/add-product" component={AddProduct} />
           <Route path="/about" component={About} />
         </div>
