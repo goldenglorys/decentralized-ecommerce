@@ -13,11 +13,11 @@ export const initWeb3 = () =>
             web3 = window.web3;
             web3.eth.defaultAccount = web3.eth.accounts[0];
             console.log(web3);
-            if (web3.version.network == "3") {
-              console.log("Connected to ropsten test network", web3.eth.defaultAccount);
+            if (web3.version.network == "5777") {
+              console.log("Connected to Local Ganache Blockchain network", web3.eth.defaultAccount);
               resolve(web3);
             } else {
-              alert("The metamask ethereum browser is not connected to ropsten test network, connect to ropsten to interact with the smart contracts. Connect and reload the page");
+              alert("The metamask ethereum browser is not connected to Local Ganache Blockchain test network, connect to Ganache to interact with the smart contracts. Connect and reload the page");
               resolve(web3);
             }
           } catch (error) {
@@ -28,11 +28,11 @@ export const initWeb3 = () =>
         web3 = window.web3;
         web3.eth.defaultAccount = web3.eth.accounts[0];
         console.log(web3);
-        if (web3.version.network == "3") {
-          console.log("Connected to ropsten test network", web3.eth.defaultAccount);
+        if (web3.version.network == "5777") {
+          console.log("Connected to Ganache test network", web3.eth.defaultAccount);
           resolve(web3);
         } else {
-          alert("The metamask ethereum browser is not connected to ropsten test network, connect to ropsten to interact with the smart contracts. Connect and reload the page");
+          alert("The metamask ethereum browser is not connected to Ganache test network, connect to Ganache to interact with the smart contracts. Connect and reload the page");
           resolve(web3);
         }
       }

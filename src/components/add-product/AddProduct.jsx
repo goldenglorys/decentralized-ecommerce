@@ -13,7 +13,7 @@ import {
 } from 'antd';
 import ipfsAPI from 'ipfs-api';
 import * as productActionsCreator from '../../actions/products';
-import { IPFS_HOST, IPFS_PORT, IPFS_GATEWAY_PORT, FLEEK_API_KEY, FLEEK_API_SECRET } from '../../config';
+import { IPFS_HOST, IPFS_PORT, IPFS_GATEWAY_PORT } from '../../config';
 import styles from './add-product.scss';
 
 import fleek from '@fleekhq/fleek-storage-js'; 
@@ -80,27 +80,12 @@ class AddProduct extends React.Component {
 
     const reader = new FileReader();
     reader.onloadend = async () => {
-      const input = {
-        apiKey: '0i7UJtXUC/6NJpbfgakp+g==',
-        apiSecret: '/E0N9m+cI9Ly9dNL+7FWpe9zL938Q1Zbt27/C+y5I/g=',
-        key: `file-${timestamp}`,
-        data: Buffer.from(reader.result),
-      };
-      try {
-        const result = await fleek.upload(input);
-        console.log(result);
-        this.setState({
-          imageLink: `https://ipfs.fleek.co/ipfs/${result.hash}`,
-        });
-      } catch(e) {
-        console.log('error', e);
-      }
-      // const [response] = await ipfs.add([Buffer.from(reader.result)]);
-      // this.setState({
-      //   imageLink: `http://${IPFS_HOST}:${IPFS_GATEWAY_PORT}/ipfs/${
-      //     response.hash
-      //   }`,
-      // });
+      const [response] = await ipfs.add([Buffer.from(reader.result)]);
+      this.setState({
+        imageLink: `http://${IPFS_HOST}:${IPFS_GATEWAY_PORT}/ipfs/${
+          response.hash
+        }`,
+      });
     };
     reader.readAsArrayBuffer(file);
   };

@@ -6,7 +6,10 @@
     "@fleekhq/fleek-storage-js": "^1.0.17",
     "antd": "^3.3.2",
     "classnames": "^2.2.5",
+    "i": "^0.3.7",
     "ipfs-api": "^18.2.0",
+    "multicodec": "^0.5.6",
+    "npm": "^8.3.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^4.0.0",
@@ -43,19 +46,19 @@
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.0.7",
     "mini-css-extract-plugin": "^0.2.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.1",
     "redux-devtools-extension": "^2.13.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
+    "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.1",
     "webpack-merge": "^4.1.2"
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --open --config webpack.dev.js"
+    "dev": "webpack-dev-server --open --openssl-legacy-provider --config webpack.dev.js"
   },
   "author": "Glory Olusola",
   "license": "MIT"

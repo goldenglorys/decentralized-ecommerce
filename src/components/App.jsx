@@ -50,9 +50,7 @@ const App = () => (
           selectable={false}
         >
           <MenuLink to="/" activeOnlyWhenExact label="Home" />
-          {/* <MenuLink to="/your-orders" label="Your Orders" /> */}
-          {/* <MenuLink to="/buyer-orders" label="Buyer Orders" /> */}
-          {/* <MenuLink to="/seller-orders" label="Seller Orders" /> */}
+          <MenuLink to="/your-orders" label="Your Orders" />
           <MenuLink to="/add-product" label="Add Product" />
           <MenuLink to="/about" label="About" />
         </Menu>
