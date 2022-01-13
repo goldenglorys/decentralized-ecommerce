@@ -38,7 +38,7 @@ struct Product {
 
 The following advanced user stories are optional, and more knowledge are gain from doing them:
 
-- [x] Writing unit tests for the contract functionality. Examples are verifying that money is debited correctly, product availability is updated correctly, products are added correctly.
+- [ ] Writing unit tests for the contract functionality. Examples are verifying that money is debited correctly, product availability is updated correctly, products are added correctly.
 - [ ] Allow quantity for products in the store.
 - [ ] Whatever else that could be think of!
 
